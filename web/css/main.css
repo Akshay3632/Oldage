@@ -1,0 +1,233 @@
+
+body{
+    font-family: Arial, Helvetica , sans-serif;
+    
+}
+.main{
+    text-align: center;
+    
+}
+.navbar{
+    overflow: hidden;
+    background-color: navy;
+  
+}
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.home {
+    width: 100%;
+    height: 100vh;
+    margin-top: 2%;
+   } 
+   .home2{
+       margin-top:2%;
+   }
+   
+   .app{
+       width: 100vw;
+       height: 100vh;
+       display: block;
+   }
+  .people{
+       width: 100vw;
+       height: 60vh;  
+   }
+   .people2{
+       margin-top: 70px;
+   }
+   .people3{
+       margin-top: 70px;
+   }
+   .you{
+       width: 100vw;
+       height: 50vh;
+       margin-bottom: 25%;
+       margin-top: 20%;
+       
+   }
+   .you2{
+       margin-top: 70px;
+   }
+   .you3{
+       margin-top: 70px;
+   }
+   .gallery{
+       width: 100vw;
+       height: 325vh;
+   }
+   .news{
+       width: 100vw;
+       height: 30 0vh;
+   }
+   .get{
+       width: 100vw;
+       height: 80vh;
+       text-align:  left;
+        margin-top: 70px;
+   }
+   .request{
+       width: 100vw;
+       height: 100vh;
+       text-align: left;
+       margin-top: 20%;
+   }
+   .life{
+       width: 100vw;
+       height: 100vh;
+   }
+   .life2{
+       margin-top: 70px;
+   }
+   .life3{
+       margin-top: 70px;
+   }
+   .life img{
+   width: 25%;
+   height: 30%;
+   margin: 10px;
+   }
+   .staff{
+       width: 100vw;
+       height: 100vh;
+   }
+   .staff2{
+       margin-top: 70px;
+   }
+   .staff3{
+       margin-top: 70px;
+   }
+   .staff img{
+   width: 25%;
+   height: 30%;
+   margin: 10px;
+   }
+   .activity{
+       width: 100vw;
+       height: 100vh;
+   }
+   .activity2{
+       margin-top: 70px;
+   }
+   .activity3{
+       margin-top: 70px;
+   }
+   .activity img{
+   width: 25%;
+   height: 30%;
+   margin: 10px;
+   }
+   .family{
+       width: 100vw;
+       height: 100vh;
+   }
+   .family2{
+       margin-top: 70px;
+   }
+   .family3{
+       margin-top: 70px;
+   }
+   .family img{
+   width: 25%;
+   height: 30%;
+   margin: 10px;
+   }
+   .training{
+       width: 100vw;
+       height: 100vh;
+   }
+   .training2{
+       margin-top: 70px;
+   }
+   .training3{
+       margin-top: 70px;
+   }
+   .training img{
+    width: 25%;
+   height: 30%;
+   margin: 10px;
+   }
+   .octagon{
+       width: 100%;
+       height: 130%
+   }
+   .octagon img{
+       width: 25%;
+       height: 30%;
+       margin: 10px;
+   }
+   .octagon2{
+       margin-top: 70px;
+   }
+   .octagon3{
+       margin-top: 70px;
+   }
+   .timberlog{
+       width: 100%;
+       height: 120%;
+       margin-top: 70px;
+   }
+   .timberlog img{
+       width: 25%;
+       height: 30%;
+       margin: 10px;
+   }
+   .timberlog2{
+       margin-top: 70px;
+   }
+   .timberlog3{
+       margin-top: 70px;
+   }
+  img{
+       border-radius: 8px;
+      
+   }
+  

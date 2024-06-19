@@ -1,0 +1,41 @@
+input[type=text],select,textArea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+input[type=submit]{
+    background-color: navy;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+input[type=submit]{
+    border-color: #45a049;
+}
+.containerget{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.tou{
+    text-align: center;
+    color: #04AA6D;
+   
+}
+.bro{
+    color: red;
+    text-align: center;
+}
+.button1{
+    background-color: #04AA6D;
+}
+
+
