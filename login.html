@@ -1,0 +1,180 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+    
+
+  <div class="container" id="signIn">
+        <h1 class="form-title">Login</h1>
+        <form action="home.html" id="loginForm">
+          <div class="alert">Your message sent</div>
+          <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+
+          
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="text"  id="email" placeholder="First Name" required>
+            <label for="fname">Email</label>
+         </div>
+          <div class="input-group">
+              <i class="fas fa-lock"></i>
+            <input type="password" id="password"  placeholder="Password" required>
+              <label for="password">Password</label>
+          </div>
+          
+         <button  class="btn"  id="login" onclick="check(this.form)">Login</button>
+        </form>
+        <p class="or">
+          ----------or----------
+        </p>
+        <div class="icons">
+          <i class="fab fa-google"></i>
+          <i class="fab fa-facebook"></i>
+        </div>
+        <div class="links">
+          <p>Don't have account yet?</p>
+          <a href="register.html"><button id="signUpButton">Register</button></a>
+        </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+      <script src="./script.js"></script>
+      <script src="./login.js"></script>
+      <script src="./replace.js"></script>
+      <script src="./user.js"></script>
+</body>
+<script type="module">
+      
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getDatabase,set,ref,update } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword ,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyC-EC6X0O7dIoflIwhmPJlAUzlMzfZAUMQ",
+    authDomain: "contactform-37103.firebaseapp.com",
+    databaseURL: "https://contactform-37103-default-rtdb.firebaseio.com",
+    projectId: "contactform-37103",
+    storageBucket: "contactform-37103.appspot.com",
+    messagingSenderId: "219402083589",
+    appId: "1:219402083589:web:846d036b75b4bce1b6ab6c"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const databse = getDatabase(app);
+  const auth = getAuth();
+//   submitSignIn.addEventListener('click',(e)=>{
+//     var email=document.getElementById('email').value;
+//     var password=document.getElementById('password').value;
+//     var username=document.getElementById('username').value;
+//   createUserWithEmailAndPassword(auth, email, password)
+// .then((userCredential) => {
+// // Signed up 
+// const user = userCredential.user;
+// set(ref(databse,'users/'+ user.uid),{
+//   email:email,
+//   password:password
+// })
+// alert('user created!');
+// // ...
+// })
+// .catch((error) => {
+// const errorCode = error.code;
+// const errorMessage = error.message;
+// // ..
+// alert(errorMessage);
+// });
+
+//   });
+
+  login.addEventListener('click',(e)=>{
+    var email=document.getElementById('email').value;
+    var password=document.getElementById('password').value;
+
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+
+    const dt= new Date();
+    update(ref(databse,'users/'+ user.uid),{
+  last_login:dt,
+
+})
+alert('user loged in!');
+
+window.location.href="home.html";
+
+
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+  });
+  });
+  
+  const user = auth.currentUser;
+  onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    console.log(user)
+    getuserInfo(user,uid)
+    const uid = user.uid;
+    // ...
+  } else {
+    getuserInfo(user,uid)
+    // User is signed out
+    // ...
+  }
+});
+
+logout.addEventListener('click',(e)=>{
+
+  signOut(auth).then(() => {
+  // Sign-out successful.
+  alert('user loged out');
+}).catch((error) => {
+  // An error happened.
+  const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+});
+});
+
+// auth.createUserWithEmailAndPassword(email,password)
+// .then((res)=>{
+// res.user.sendEmailVerification({
+//     url:"home.html confirm_email=true",
+// });
+// return createUser({email,uid:res.user.uid,name});
+// })
+
+//  function func(){
+  
+//   var email=document.getElementById('email').value;
+//   var password=document.getElementById('password').value;
+// if(user==notNull)
+//   {
+//     window.location.assign("home.html");
+//     alert('login');
+//   }else{
+//     alert('faild');
+//   }
+//  }
+
+
+
+</script> 
+
+</html>>
